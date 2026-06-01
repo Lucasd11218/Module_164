@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Ajouter une RESERVATION {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Ajouter une réservation</p>
+            <form action="" method="POST" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <p>{{ form.date_reservation_wtf.label }}<br>{{ form.date_reservation_wtf(size=32) }}<br>
+                    {% for error in form.date_reservation_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form.heure_debut_reservation_wtf.label }}<br>{{ form.heure_debut_reservation_wtf(size=32) }}<br>
+                    {% for error in form.heure_debut_reservation_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form.heure_fin_reservation_wtf.label }}<br>{{ form.heure_fin_reservation_wtf(size=32) }}<br>
+                    {% for error in form.heure_fin_reservation_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form.statut_reservation_wtf.label }}<br>{{ form.statut_reservation_wtf(size=32) }}<br>
+                    {% for error in form.statut_reservation_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                </div>
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

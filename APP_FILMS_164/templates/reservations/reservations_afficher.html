@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %} Afficher RESERVATIONS {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Réservations</p>
+            <table class="table table-bordered table-sm">
+            {% if data %}
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>Heure début</th>
+                        <th>Heure fin</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+            {% endif %}
+            {% for row in data %}
+            <tbody>
+                <tr>
+                    <td class="align-middle">{{ row.id_reservation }}</td>
+                    <td class="align-middle">{{ row.date }}</td>
+                    <td class="align-middle">{{ row.heure_debut }}</td>
+                    <td class="align-middle">{{ row.heure_fin }}</td>
+                    <td class="align-middle">{{ row.statut }}</td>
+                    <td class="text-center"><a class="btn btn-primary" href="{{ url_for('reservations_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                    <td class="text-center"><a class="btn btn-warning" href="{{ url_for('reservation_update_wtf', id_reservation_btn_edit_html=row.id_reservation) }}" role="button">Edit</a></td>
+                    <td class="text-center"><a class="btn btn-danger" href="{{ url_for('reservation_delete_wtf', id_reservation_btn_delete_html=row.id_reservation) }}" role="button">Delete</a></td>
+                </tr>
+            </tbody>
+            {% else %}
+            <tbody>
+                <tr>
+                    <td>Aucune réservation.</td>
+                    <td><a class="btn btn-primary" href="{{ url_for('reservations_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

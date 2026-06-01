@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} Afficher CHIENS {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Chiens</p>
+            <table class="table table-bordered table-sm">
+            {% if data %}
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Race</th>
+                        <th>Age</th>
+                        <th>Taille</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+            {% endif %}
+            {% for row in data %}
+            <tbody>
+                <tr>
+                    <td class="align-middle">{{ row.id_chien }}</td>
+                    <td class="align-middle">{{ row.nom }}</td>
+                    <td class="align-middle">{{ row.race }}</td>
+                    <td class="align-middle">{{ row.age }}</td>
+                    <td class="align-middle">{{ row.taille }}</td>
+                    <td class="align-middle">{{ row.notes }}</td>
+                    <td class="text-center"><a class="btn btn-primary" href="{{ url_for('chiens_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                    <td class="text-center"><a class="btn btn-warning" href="{{ url_for('chien_update_wtf', id_chien_btn_edit_html=row.id_chien) }}" role="button">Edit</a></td>
+                    <td class="text-center"><a class="btn btn-danger" href="{{ url_for('chien_delete_wtf', id_chien_btn_delete_html=row.id_chien) }}" role="button">Delete</a></td>
+                </tr>
+            </tbody>
+            {% else %}
+            <tbody>
+                <tr>
+                    <td>Aucun chien.</td>
+                    <td><a class="btn btn-primary" href="{{ url_for('chiens_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

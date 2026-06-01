@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %} Afficher PROMENEURS {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Promeneurs</p>
+            <table class="table table-bordered table-sm">
+            {% if data %}
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                    </tr>
+                </thead>
+            {% endif %}
+            {% for row in data %}
+            <tbody>
+                <tr>
+                    <td class="align-middle">{{ row.id_promeneur }}</td>
+                    <td class="align-middle">{{ row.nom }}</td>
+                    <td class="align-middle">{{ row.prenom }}</td>
+                    <td class="align-middle">{{ row.email }}</td>
+                    <td class="align-middle">{{ row.telephone }}</td>
+                    <td class="text-center"><a class="btn btn-primary" href="{{ url_for('promeneurs_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                    <td class="text-center"><a class="btn btn-warning" href="{{ url_for('promeneur_update_wtf', id_promeneur_btn_edit_html=row.id_promeneur) }}" role="button">Edit</a></td>
+                    <td class="text-center"><a class="btn btn-danger" href="{{ url_for('promeneur_delete_wtf', id_promeneur_btn_delete_html=row.id_promeneur) }}" role="button">Delete</a></td>
+                </tr>
+            </tbody>
+            {% else %}
+            <tbody>
+                <tr>
+                    <td>Aucun promeneur.</td>
+                    <td><a class="btn btn-primary" href="{{ url_for('promeneurs_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

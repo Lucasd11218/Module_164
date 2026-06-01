@@ -41,7 +41,11 @@ try:
     from APP_FILMS_164.database import database_tools
     from APP_FILMS_164.essais_wtf_forms import gestion_essai_wtf
     from APP_FILMS_164.essais_wtf_forms import gestion_wtf_forms_demo_select
-    from APP_FILMS_164.services import gestion_genres_crud
+    from APP_FILMS_164.services import gestion_services_crud
+    from APP_FILMS_164.chiens import gestion_chiens_crud
+    from APP_FILMS_164.promeneurs import gestion_promeneurs_crud
+    from APP_FILMS_164.clients import gestion_clients_crud
+    from APP_FILMS_164.reservations import gestion_reservations_crud
     from APP_FILMS_164.demos_om_164 import routes_demos
 
     from APP_FILMS_164.films_genres import gestion_films_genres_crud

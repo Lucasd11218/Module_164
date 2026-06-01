@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Editer un CHIEN {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Editer un chien</p>
+            <form action="" method="POST" novalidate>
+                {{ form_update.hidden_tag() }}
+                <div class="form-group">
+                    <p>{{ form_update.nom_chien_update_wtf.label }}<br>{{ form_update.nom_chien_update_wtf(size=32) }}<br>
+                    {% for error in form_update.nom_chien_update_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form_update.race_chien_update_wtf.label }}<br>{{ form_update.race_chien_update_wtf(size=32) }}<br>
+                    {% for error in form_update.race_chien_update_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form_update.age_chien_update_wtf.label }}<br>{{ form_update.age_chien_update_wtf(size=32) }}<br>
+                    {% for error in form_update.age_chien_update_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form_update.taille_chien_update_wtf.label }}<br>{{ form_update.taille_chien_update_wtf(size=32) }}<br>
+                    {% for error in form_update.taille_chien_update_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                    <p>{{ form_update.notes_chien_update_wtf.label }}<br>{{ form_update.notes_chien_update_wtf(size=32) }}<br>
+                    {% for error in form_update.notes_chien_update_wtf.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                </div>
+                {{ form_update.submit(class="btn btn-primary") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
