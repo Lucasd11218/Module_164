@@ -1,0 +1,46 @@
+Cahier des charges - Promenade de chiens
+Auteur : DaRosa Lucas
+Classe : DEVA1A
+Date : 01.06.2026
+Module : 164
+
+1. Contexte et besoin
+Un groupe d'amis souhaite proposer un service de promenade de chiens pour gagner un peu d'argent. Ils ont besoin d'un outil simple pour organiser leurs activités entre promeneurs et clients.
+2. Objectif
+Créer une application web avec une base de données qui simplifie l'organisation entre les promeneurs et les clients. L'application permet de gérer les chiens, les clients, les promeneurs, les services proposés et les réservations.
+3. Fonctionnalités
+
+Gestion des clients : ajouter, modifier, supprimer, afficher
+Gestion des chiens : ajouter, modifier, supprimer, afficher
+Gestion des promeneurs : ajouter, modifier, supprimer, afficher
+Gestion des services : ajouter, modifier, supprimer, afficher
+Gestion des réservations : ajouter, modifier, supprimer, afficher
+Liaison entre un client et ses chiens
+Liaison entre un promeneur, un chien et un service
+
+4. Technologies utilisées
+
+Python / Flask : framework web
+MySQL : base de données
+HTML / CSS / Bootstrap : interface utilisateur
+WTForms : gestion des formulaires
+Laragon : serveur local MySQL
+PyCharm : environnement de développement
+
+5. Base de données
+7 tables :
+
+t_client : informations des clients
+t_chien : informations des chiens
+t_promeneur : informations des promeneurs
+t_service : services proposés
+t_reservation : réservations effectuées
+t_client_chien : liaison entre clients et chiens
+t_promeneur_chien_service : liaison entre promeneurs, chiens et services
+
+6. Contraintes
+
+Un client peut posséder plusieurs chiens
+Un chien peut être promené par plusieurs promeneurs
+Un promeneur peut proposer plusieurs services
+Avant de supprimer un enregistrement, le système vérifie s'il est lié à d'autres tables
