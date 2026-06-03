@@ -67,3 +67,4 @@ SECRET_KEY_FLASK=secret
 3. Le terminal va afficher une adresse locale : `http://127.0.0.1:5560`
 4. Cliquez sur ce lien pour ouvrir l'application dans votre navigateur web.
 
+L'application est maintenant 100% fonctionnelle ! Vous pouvez gérer les clients, chiens, promeneurs, services et réservations.
