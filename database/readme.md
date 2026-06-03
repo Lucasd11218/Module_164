@@ -1,4 +1,4 @@
-# 🐕 Promenade de Chiens - Guide d'Installation
+#  Promenade de Chiens - Guide d'Installation
 
 Bienvenue sur le projet Promenade de Chiens, une application web permettant de gérer une base de données relationnelle autour de la gestion de promenades de chiens (Clients, Chiens, Promeneurs, Services, Réservations).
 
@@ -6,7 +6,7 @@ Ce guide s'adresse au client / correcteur pour lui permettre de déployer le pro
 
 ---
 
-## 🔧 1. Prérequis (Logiciels nécessaires)
+##  1. Prérequis (Logiciels nécessaires)
 
 Pour faire fonctionner ce projet, votre poste de travail doit être équipé des logiciels suivants :
 
@@ -16,7 +16,7 @@ Pour faire fonctionner ce projet, votre poste de travail doit être équipé des
 
 ---
 
-## 🗄️ 2. Installation de la Base de Données
+##  2. Installation de la Base de Données
 
 L'application repose sur une base de données MySQL qui doit être initialisée avant de lancer le code.
 
@@ -30,7 +30,7 @@ L'application repose sur une base de données MySQL qui doit être initialisée 
 
 ---
 
-## ⚙️ 3. Configuration de l'Application Python
+##  3. Configuration de l'Application Python
 
 1. Récupérez le dossier du projet (via le ZIP ou clonez GitHub).
 2. Ouvrez ce dossier complet dans **PyCharm**.
@@ -40,9 +40,9 @@ pip install -r requirements.txt
 
 ---
 
-## 🔒 4. Variables d'Environnement (.env)
+##  4. Variables d'Environnement (.env)
 
-Pour que Python puisse communiquer avec votre base de données locale, l'application utilise un fichier de configuration `.env`.
+Pour que Python puisse communiquer avec la base de données locale, l'application utilise un fichier de configuration `.env`.
 
 Vérifiez la présence du fichier `.env` à la racine du projet. S'il n'existe pas, créez-le et insérez les paramètres suivants :
 
@@ -58,15 +58,12 @@ PORT_FLASK=5560
 SECRET_KEY_FLASK=secret
 
 
-*(Adaptez `NAME_BD_MYSQL` avec le nom exact de la base de données créée lors de l'étape 2.)*
-
 ---
 
-## 🚀 5. Lancement de l'Application
+##  5. Lancement de l'Application
 
 1. Dans PyCharm, repérez le fichier principal de lancement : `run_mon_app.py`.
 2. Faites un clic droit sur ce fichier et sélectionnez **Run 'run_mon_app'** (ou utilisez le bouton Play vert en haut à droite).
 3. Le terminal va afficher une adresse locale : `http://127.0.0.1:5560`
 4. Cliquez sur ce lien pour ouvrir l'application dans votre navigateur web.
 
-L'application est maintenant 100% fonctionnelle ! Vous pouvez gérer les clients, chiens, promeneurs, services et réservations.
